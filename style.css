@@ -1,0 +1,23 @@
+body{
+    background-size: cover;
+}
+
+#heading{
+    width:100%;
+    font-family: monospace;
+    text-align: left;
+}
+
+#heading h3{
+    display: inline;
+    font-size: 25pxs;
+}
+
+.ins{
+    float: right;
+    border: 2px #000 solid;
+}
+
+#start,#status{
+    border: 2px #000 solid;
+}
