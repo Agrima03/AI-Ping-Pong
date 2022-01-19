@@ -25,10 +25,17 @@ rightWristY = 0;
 rightWristX = 0;
 scoreRightWrist = 0;
 gameStatus="";
-
 //Define a variable to hold the status of the game
 
- 
+function preload(){
+  ball_missed= loadSound("missed.wav");
+}
+
+function restart(){
+  pcscore=0;
+  playerscore=0;
+  loop();
+}
 
 function setup(){
 var canvas =  createCanvas(700,600);
@@ -171,7 +178,7 @@ function move(){
   }
   else{
     pcscore++;
-    
+    ball_missed.play();
     reset();
     navigator.vibrate(100);
   }
@@ -184,7 +191,7 @@ if(pcscore ==4){
     stroke("white");
     textSize(25);
     text("Game Over!",width/2,height/2);
-    text("Reload the page!",width/2,height/2+30)
+    text("Press restart button to restart!",width/2,height/2+30)
     noLoop();
     pcscore = 0;
  }
